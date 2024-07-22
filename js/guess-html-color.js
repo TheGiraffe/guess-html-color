@@ -90,7 +90,7 @@ function guessColor(guessedColor, targetColor){
     thisButton.style.background = guessedColor;
     const targetColorBox = document.getElementById("targetColorBox");
     correct = false;
-    console.log(targetColor);
+    console.log(`How did you know that you could find the answer here in the console? That's supposed to be only my knowledge! \n The target color is ${targetColor}`);
     adjustFontColor(thisButton);
     if (guessedColor === targetColor){
         correct = true;
