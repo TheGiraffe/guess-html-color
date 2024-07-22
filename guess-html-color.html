@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang = "en">
+    <head>
+        <meta charset="utf-8"/>
+        <title>Guess the HTML Color!</title>
+        <style>
+            
+            @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap');
+
+            html{
+                height: 100%;
+                width: 100%;
+            }
+            body{
+                height: 100%;
+                width: 100%;
+                margin: 0;
+                font-family: "Quicksand", sans-serif;
+                font-optical-sizing: auto;
+                font-weight: 400;
+                font-style: normal;
+                font-size: 1vw;
+                color: #20262b;
+                background-color: #20262b;
+            }
+            .gameContainer{
+                position: absolute;
+                left: 0;
+                right: 0;
+                width: 95%;
+                margin: auto;
+                text-align: center;
+                background-color: white;
+                padding: 0.5rem;
+                border-bottom-left-radius: 1rem;
+                border-bottom-right-radius: 1rem;
+            }
+            .headerContainer{
+                display: flex;
+                gap: 1rem;
+                padding: 0.5rem 3rem 0.5rem 1rem;
+                justify-content: space-between;
+                animation: generateRainbow 60s infinite linear;
+                color: #20262b;
+            }
+            .flex-horiz-container{
+                display: flex;
+                gap: 2rem;
+            }
+            h1{
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+            h2{
+                margin-top: auto;
+                margin-bottom: auto;
+            }
+            #targetColorBox{
+                display: block;
+                padding:4rem;
+                width: 25%;
+                left: 0;
+                right: 0;
+                margin: auto;
+                margin-top: 1rem;
+                margin-bottom: 1rem;
+                background-color: white;
+                text-align: center;
+                border: #20262b outset 0.2rem;
+                border-radius: 0.5rem;
+            }
+
+            button{
+                font-family: "Quicksand", sans-serif;
+                border: outset;
+                text-decoration: none;
+            }
+            button:hover:enabled{
+                cursor: pointer;
+                text-decoration:underline;
+            }
+            #generateButton{
+                border-radius: 0.4rem;
+                font-weight: 600;
+                background-color: white;
+                color: #20262b;
+                transition: 500ms;
+            }
+            @keyframes generateRainbow{
+                0% {background-color: orchid;color:#20262b}
+                10% {background-color: salmon; color:#20262b}
+                20% {background-color: red; color:#20262b}
+                30% {background-color: orange; color:#20262b}
+                40% {background-color: yellow; color: #20262b}
+                50% {background-color: green; color: #20262b}
+                60% {background-color: aquamarine; color: #20262b}
+                70% {background-color: blue; color: white}
+                80% {background-color: purple; color: white}
+                90% {background-color: indigo; color: white}
+                100% {background-color: orchid; color: #20262b}
+            }
+
+            @keyframes generateRainbowText{
+                0% {color: orchid;}
+                10% {color: salmon;}
+                20% {color: red;}
+                30% {color: orange;}
+                40% {color: yellow;}
+                50% {color: green;}
+                60% {color: aquamarine;}
+                70% {color: blue;}
+                80% {color: purple;}
+                90% {color: indigo;}
+                100% {color: orchid;}
+            }
+
+            #generateButton:hover{
+                text-decoration: none;
+                background-color: #20262b;
+                color: white;
+                transition: 500ms;
+                animation: generateRainbowText 8s linear;
+            }
+            #generateButton:hover::after{
+                content: ' >>';
+            }
+            .colorButton{
+                display: inline-block;
+                margin: 0.2rem;
+                border-radius: 0.5rem;
+            }
+            #buttonsContainer{
+                display: block;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="headerContainer">
+            <div class="flex-horiz-container">
+                <h1>Guess the HTML Color!</h1>
+                <button id="generateButton" type="button" onclick="generateColor()">Generate A Color<span></span></button>
+            </div>
+            <h2>Guess Count: <span id="guessTicker"></span></h2>
+        </div>
+        <div class = "gameContainer">
+            <div id="targetColorBox">Click the button above to generate a color.</div>
+
+            <div id="buttonsContainer"></div>
+        </div>
+        <script src="js/guess-html-color.js"></script>
+    </body>
+</html>
